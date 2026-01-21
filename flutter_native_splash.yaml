@@ -1,0 +1,13 @@
+flutter_native_splash:
+  color: "#0A0A0B"
+  image: "assets/logo_plaque.png"
+  branding: "assets/vault_bg.png"
+  color_dark: "#0A0A0B"
+  image_dark: "assets/logo_plaque.png"
+  branding_dark: "assets/vault_bg.png"
+
+  android_12:
+    image: "assets/logo_plaque.png"
+    icon_background_color: "#0A0A0B"
+    image_dark: "assets/logo_plaque.png"
+    icon_background_color_dark: "#0A0A0B"
