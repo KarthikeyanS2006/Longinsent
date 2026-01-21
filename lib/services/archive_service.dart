@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
+class ArchiveAIService {
+
   static final List<String> _apiKeys = [
     'INSERT_YOUR_GROQ_API_KEY_HERE',
   ];

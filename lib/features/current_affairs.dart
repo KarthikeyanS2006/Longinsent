@@ -23,22 +23,14 @@ class _CurrentAffairsPageState extends State<CurrentAffairsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppTheme.background,
       appBar: AppBar(
-        title: Text('ON THIS DAY', style: GoogleFonts.cinzel(fontWeight: FontWeight.bold, color: const Color(0xFFB8860B))),
-        backgroundColor: Colors.black,
-        iconTheme: const IconThemeData(color: Color(0xFFB8860B)),
+        title: Text('ON THIS DAY', style: GoogleFonts.outfit(fontWeight: FontWeight.bold, color: Colors.white)),
+        backgroundColor: AppTheme.background,
+        elevation: 0,
+        iconTheme: const IconThemeData(color: Colors.blueGrey),
       ),
-      body: Stack(
-        children: [
-           Positioned.fill(
-            child: Image.asset(
-              'assets/vault_bg.png',
-              fit: BoxFit.cover,
-              color: Colors.black.withValues(alpha:0.8),
-              colorBlendMode: BlendMode.darken,
-            ),
-          ),
-          FutureBuilder<List<Map<String, String>>>(
+      body: FutureBuilder<List<Map<String, String>>>(
             future: _dataFuture,
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
@@ -46,9 +38,9 @@ class _CurrentAffairsPageState extends State<CurrentAffairsPage> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const CircularProgressIndicator(color: Color(0xFFB8860B)),
+                      const CircularProgressIndicator(color: AppTheme.primary),
                       const SizedBox(height: 16),
-                      Text("Scanning Temporal Lines...", style: GoogleFonts.cinzel(color: Colors.white70)),
+                      Text("Scanning Temporal Lines...", style: GoogleFonts.outfit(color: Colors.white70)),
                     ],
                   ),
                 );
@@ -67,11 +59,11 @@ class _CurrentAffairsPageState extends State<CurrentAffairsPage> {
                 itemBuilder: (context, index) {
                   final event = events[index];
                   return Card(
-                    color: const Color(0xFF1B1B2F).withValues(alpha:0.8),
+                    color: AppTheme.surface,
                     margin: const EdgeInsets.only(bottom: 16),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
-                      side: BorderSide(color: const Color(0xFFB8860B).withValues(alpha:0.3)),
+                      side: BorderSide(color: Colors.white.withValues(alpha:0.05)),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(16),
@@ -85,7 +77,7 @@ class _CurrentAffairsPageState extends State<CurrentAffairsPage> {
                                 style: GoogleFonts.outfit(
                                   fontSize: 24, 
                                   fontWeight: FontWeight.bold, 
-                                  color: const Color(0xFFB8860B)
+                                  color: AppTheme.primary
                                 ),
                               ),
                               const SizedBox(width: 12),
@@ -97,12 +89,12 @@ class _CurrentAffairsPageState extends State<CurrentAffairsPage> {
                           const SizedBox(height: 8),
                           Text(
                             event['title']!,
-                            style: GoogleFonts.cinzel(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                            style: GoogleFonts.outfit(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
                           ),
                           const SizedBox(height: 8),
                           Text(
                             event['description']!,
-                            style: const TextStyle(color: Colors.white70),
+                            style: const TextStyle(color: Colors.blueGrey),
                           ),
                         ],
                       ),
@@ -111,9 +103,6 @@ class _CurrentAffairsPageState extends State<CurrentAffairsPage> {
                 },
               );
             },
-          ),
-        ],
-      ),
     );
   }
 }

@@ -748,14 +748,14 @@ class _HomePageState extends State<HomePage> {
           decoration: BoxDecoration(
             color: AppTheme.slate,
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: AppTheme.bronze),
+            border: Border.all(color: AppTheme.primary),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const CircularProgressIndicator(color: AppTheme.bronze),
+              const CircularProgressIndicator(color: AppTheme.primary),
               const SizedBox(height: 24),
-              Text("RECONSTRUCTING HISTORY...", style: GoogleFonts.cinzel(color: AppTheme.bronze)),
+              Text("RECONSTRUCTING HISTORY...", style: GoogleFonts.outfit(color: AppTheme.primary, fontWeight: FontWeight.bold)),
               const SizedBox(height: 8),
               const Text("AI probes are analyzing archival patterns...", style: TextStyle(color: Colors.white70), textAlign: TextAlign.center),
             ],
@@ -784,11 +784,8 @@ class _HomePageState extends State<HomePage> {
            await Supabase.instance.client.from('incidents').insert(insertData);
         }
 
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              backgroundColor: AppTheme.bronze,
-              content: Text("NODE REGISTERED: ${discovery['title']}", style: const TextStyle(color: Colors.black)),
+              backgroundColor: AppTheme.primary,
+              content: Text("NODE REGISTERED: ${discovery['title']}", style: const TextStyle(color: Colors.white)),
             ),
           );
           _searchController.clear();
