@@ -17,6 +17,26 @@ Originally built as a **Flutter** app, this repository now ships both the Flutte
 | **103 seeded incidents** | Curated historical dataset loaded from `historical_vault_data.csv` |
 | **Study-first UI** | Dark Slate/indigo theme (Outfit font), vault stats strip, animated timeline cards |
 
+## Screenshots
+
+<p align="center">
+  <img src="assets/login.png" alt="Login screen" width="720"/>
+  <br/>
+  <sub><b>Fig 1.</b> Secure archive access — email signup and login with Supabase, styled with the Keyan Groups plaque on the native-splash backdrop.</sub>
+</p>
+
+<p align="center">
+  <img src="assets/vault.png" alt="Vault screen" width="720"/>
+  <br/>
+  <sub><b>Fig 2.</b> The Vault — study-stats strip, AI "Reconstruct History" search, and 103 archived incident nodes ready for deep-dive reports.</sub>
+</p>
+
+<p align="center">
+  <img src="assets/on-this-day.png" alt="On This Day screen" width="720"/>
+  <br/>
+  <sub><b>Fig 3.</b> On This Day — five major historical events from today's date, reconstructed live by the AI.</sub>
+</p>
+
 ## Repository layout
 
 ```
