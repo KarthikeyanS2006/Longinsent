@@ -2,6 +2,7 @@
   "name": "longinset-web",
   "private": true,
   "version": "1.0.0",
+  "description": "Keyan Groups Archival Vault - AI-powered historical research web app (React + Vite + Supabase + Groq)",
   "type": "module",
   "scripts": {
     "dev": "concurrently -k \"npm:dev:server\" \"npm:dev:client\"",
